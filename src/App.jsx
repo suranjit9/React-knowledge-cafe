@@ -9,14 +9,18 @@ import Times from './assets/Bookmark/Times'
 function App() {
   const [bookmark, setBookmark] = useState([]);
   const [times, setTimes] =useState(0);
+  
 
   const handlerBook =(blogee)=>{
     const bookset =[...bookmark,blogee];
     setBookmark(bookset);
   }
-  const handlerTime = timex=>{
-    console.log('click on me ');
+  const handlerTime = (timex,id)=>{
     setTimes(times+timex);
+    const removeBook = bookmark.filter(bookmarks =>bookmarks.id !== id);
+    setBookmark(removeBook);
+    // setButtonDisabled(true);
+    
   }
   return (
     <>
@@ -27,6 +31,7 @@ function App() {
             <Blogs
             handlerBook={handlerBook}
             handlerTime={handlerTime}
+            // isButtonDisabled={isButtonDisabled}
             ></Blogs>
           </div>
 

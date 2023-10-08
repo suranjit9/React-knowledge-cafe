@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Blog from "./blog";
+import PropTypes from 'prop-types';
 
 
 const Blogs = ({handlerBook,handlerTime}) => {
@@ -26,5 +27,6 @@ const Blogs = ({handlerBook,handlerTime}) => {
         </div>
     );
 };
+
 
 export default Blogs;

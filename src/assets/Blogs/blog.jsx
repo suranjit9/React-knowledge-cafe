@@ -2,9 +2,9 @@
 
 const Blog = ({ blog,handlerBook,handlerTime }) => {
     // console.log(blog);
-    const { title, img, authorimg, authorname, postiongdate, time } = blog;
+    const { title, img, authorimg, authorname, postiongdate, time, id } = blog;
     return (
-        <div className="space-y-2 md:space-y-3 mb-5">
+        <div className="space-y-2 md:space-y-3 mb-5 mt-2">
             <img className="w-full rounded-lg" src={img} alt="" />
 
             <div className="flex justify-between mx-auto">
@@ -24,7 +24,7 @@ const Blog = ({ blog,handlerBook,handlerTime }) => {
             <h1 className="text-2xl font-semibold md:text-4xl font-semibold">{title}</h1>
             <p>#NewesBangla #blogenew</p>
             </div>
-            <div className="text-end active:text-Black-700"><button onClick={()=>handlerTime(time)} className="text-orange-700 underline underline-offset-4">Red More</button></div>
+            <div className="text-end active:text-Black-700"><button onClick={()=>handlerTime(time,id)} className="text-orange-700 underline underline-offset-4">Red More</button></div>
             
             
         </div>
