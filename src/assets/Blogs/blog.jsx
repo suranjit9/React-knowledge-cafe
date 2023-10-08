@@ -1,7 +1,7 @@
 
 
-const Blog = ({ blog }) => {
-    console.log(blog);
+const Blog = ({ blog,handlerBook }) => {
+    // console.log(blog);
     const { title, img, authorimg, authorname, postiongdate, time } = blog;
     return (
         <div className="space-y-2 md:space-y-3 mb-5">
@@ -15,15 +15,16 @@ const Blog = ({ blog }) => {
                         <p className="text-base">{postiongdate}</p>
                     </div>
                 </div>
-                <div>
-                    <h2>{time} Munits</h2>
+                <div className="flex">
+                    <h2>{time} Munits </h2>
+                    <img onClick={()=>handlerBook(blog)} className="w-5" src="/src/images/bookmark.png" alt="" />
                 </div>
             </div>
             <div>
             <h1 className="text-2xl font-semibold md:text-4xl font-semibold">{title}</h1>
             <p>#NewesBangla #blogenew</p>
             </div>
-            <div className="text-end"><button className="text-orange-700 underline underline-offset-4">Red More</button></div>
+            <div className="text-end active:text-Black-700"><button className="text-orange-700 underline underline-offset-4">Red More</button></div>
             
             
         </div>
