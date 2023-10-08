@@ -3,7 +3,7 @@ import { useState } from "react";
 import Blog from "./blog";
 
 
-const Blogs = ({handlerBook}) => {
+const Blogs = ({handlerBook,handlerTime}) => {
     const [blogs, setBlogs] = useState([]);
     useEffect(()=>{
         fetch ('/public/BlogData/data.json')
@@ -14,12 +14,13 @@ const Blogs = ({handlerBook}) => {
     },[])
     return (
         <div>
-            <h1>Total Blogs :{blogs.length}</h1>
+            
             {
                 blogs.map(blog => <Blog 
                     key={blog.id}
                     blog={blog}
                     handlerBook={handlerBook}
+                    handlerTime={handlerTime}
                 ></Blog>)
             }
         </div>

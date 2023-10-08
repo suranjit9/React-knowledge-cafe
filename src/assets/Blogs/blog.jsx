@@ -1,6 +1,6 @@
 
 
-const Blog = ({ blog,handlerBook }) => {
+const Blog = ({ blog,handlerBook,handlerTime }) => {
     // console.log(blog);
     const { title, img, authorimg, authorname, postiongdate, time } = blog;
     return (
@@ -24,7 +24,7 @@ const Blog = ({ blog,handlerBook }) => {
             <h1 className="text-2xl font-semibold md:text-4xl font-semibold">{title}</h1>
             <p>#NewesBangla #blogenew</p>
             </div>
-            <div className="text-end active:text-Black-700"><button className="text-orange-700 underline underline-offset-4">Red More</button></div>
+            <div className="text-end active:text-Black-700"><button onClick={()=>handlerTime(time)} className="text-orange-700 underline underline-offset-4">Red More</button></div>
             
             
         </div>
